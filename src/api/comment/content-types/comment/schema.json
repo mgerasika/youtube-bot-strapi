@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comments",
+  "info": {
+    "singularName": "comment",
+    "pluralName": "comments",
+    "displayName": "Comment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    },
+    "video_id": {
+      "type": "uid"
+    },
+    "publishedDate": {
+      "type": "datetime"
+    },
+    "replayDate": {
+      "type": "datetime"
+    },
+    "likeCount": {
+      "type": "integer"
+    },
+    "channel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::customer.customer",
+      "inversedBy": "comments"
+    }
+  }
+}
